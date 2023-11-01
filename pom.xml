@@ -11,7 +11,7 @@
 	<groupId>com.banco</groupId>
 	<artifactId>banco</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>banco</name>
+	<name>projeto</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>17</java.version>
