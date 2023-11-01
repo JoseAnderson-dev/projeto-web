@@ -1,8 +1,8 @@
-package services;
+package br.com.haan.ct.services;
 
-import com.bancoprojeto.banco.entities.Transacao;
-import repository.TransacaoRepository;
-import Modelo.TransacaoModelo;
+import br.com.haan.ct.entities.Transacao;
+import br.com.haan.ct.modelo.RespostaModelo;
+import br.com.haan.ct.repositories.TransacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,13 +10,13 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class TransacaoService {
-    
+
     @Autowired
     private TransacaoRepository transacaoRepository;
 
-
+    // aula do dia 10/08
     @Autowired
-    private TransacaoModelo transacaoModelo;
+    private RespostaModelo respostaModelo;
 
     public Iterable<Transacao> listar() {
         return transacaoRepository.findAll();
@@ -30,9 +30,9 @@ public class TransacaoService {
         }
     }
 
-    public ResponseEntity<TransacaoModelo> remover(Long id) {
+    public ResponseEntity<RespostaModelo> remover(Long id) {
         transacaoRepository.deleteById(id);
-        transacaoModelo.setMensagem("A Transação foi removida com sucesso.");
-        return new ResponseEntity<TransacaoModelo>(transacaoModelo, HttpStatus.OK);
+        respostaModelo.setMensagem("a transacao foi removido com sucesso.");
+        return new ResponseEntity<RespostaModelo>(respostaModelo, HttpStatus.OK);
     }
 }

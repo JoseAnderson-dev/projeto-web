@@ -1,23 +1,20 @@
-package com.bancoprojeto.banco.entities;
+package br.com.haan.ct.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
 
 @Entity
-@Getter
-@Setter
 @Data
-@EqualsAndHashCode
 public class Transacao {
-    @Id
+     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
@@ -28,4 +25,7 @@ public class Transacao {
     private LocalTime hora;
     private LocalDate data;
     private String comentario;
+    
+  
+    
 }
