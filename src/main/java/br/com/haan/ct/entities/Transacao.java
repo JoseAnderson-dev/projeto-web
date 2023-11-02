@@ -4,11 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
 import lombok.Data;
 
 @Entity
@@ -22,8 +20,8 @@ public class Transacao {
     private int valor;
     private String cpf;
     private int cartao;
-    private LocalTime hora;
-    private LocalDate data;
+    private String hora;
+    private String data;
     private String comentario;
     
   
